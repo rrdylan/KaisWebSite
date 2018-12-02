@@ -1,0 +1,12 @@
+<div>
+    <h2>Test</h2>
+    <div *ngIf="!auth.isLoggedIn()">
+        <app-login></app-login>
+    </div>
+    <div *ngIf="auth.isLoggedIn()">
+        <a routerLink="/profile">{{ auth.getUserDetails()?.name }}</a>
+    </div>
+    <div *ngIf="auth.isLoggedIn()">
+        <a (click)="auth.logout()">Logout</a>
+    </div>
+</div>
