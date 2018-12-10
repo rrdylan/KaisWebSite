@@ -1,12 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+    <h1>
+        Connexion
+    </h1>
+    <div id="InProgress">
+        <a [routerLink]="'/login'"> Login </a>
+        <a [routerLink]="'/home'"> Home </a>
+        <a [routerLink]="'/profile'"> Profile </a>
+        <a [routerLink]="'/clients'"> Liste des clients </a>
+        <a [routerLink]="'/fournisseurs'">Liste des fournisseur</a>
+        <a [routerLink]="'/users'"> Liste des utilisateurs </a>
+    </div>
+</div>
+
 <div>
-    <h2>Test</h2>
-    <div *ngIf="!auth.isLoggedIn()">
-        <app-login></app-login>
-    </div>
-    <div *ngIf="auth.isLoggedIn()">
-        <a routerLink="/profile">{{ auth.getUserDetails()?.name }}</a>
-    </div>
-    <div *ngIf="auth.isLoggedIn()">
-        <a (click)="auth.logout()">Logout</a>
-    </div>
+    <router-outlet></router-outlet>
 </div>
